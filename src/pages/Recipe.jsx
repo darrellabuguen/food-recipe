@@ -33,16 +33,25 @@ export default function Recipe(props) {
     useEffect(() => {
         window.addEventListener('resize', () => {
             setWidth(window.innerWidth);
-            setNav();
         });
 
         return () => {
             window.addEventListener('resize', () => {
                 setWidth(window.innerWidth);
-                setNav();
             });
         }
     }, [devwidth]);
+
+    useEffect(() => {
+        if (devwidth > 479) {
+            document.querySelector(".ingredients-frame").style.display = "block";
+            document.querySelector(".instructions-frame").style.display = "block";
+            setNavInfo(0);
+        }
+        else if (navs === 0 && devwidth < 480) {
+            document.querySelector(".instructions-frame").style.display = "none";
+        }
+    }, [devwidth, navs])
 
     const getInformation = async () => {
         const data = await fetch(`https://api.spoonacular.com/recipes/${JSON.stringify(query)}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=false`);
@@ -54,19 +63,13 @@ export default function Recipe(props) {
     const setNav = () => {
         const ingredients_frame = document.querySelector(".ingredients-frame");
         const instructions_frame = document.querySelector(".instructions-frame");
-        if (devwidth >= 479) {
-            ingredients_frame.style.display = "block";
+        if (navs === 0) {
             instructions_frame.style.display = "block";
+            ingredients_frame.style.display = "none";
         }
         else {
-            if (navs === 0) {
-                instructions_frame.style.display = "block";
-                ingredients_frame.style.display = "none";
-            }
-            else {
-                instructions_frame.style.display = "none";
-                ingredients_frame.style.display = "block";
-            }
+            instructions_frame.style.display = "none";
+            ingredients_frame.style.display = "block";
         }
     }
 
@@ -74,7 +77,8 @@ export default function Recipe(props) {
         <div className="resimg-con">
             <img src={information.image} alt="img" className="search-info-image" />
         </div>
-        <h1>{information.title}</h1>
+        <div className="gap"></div>
+        <h1 className="res-title">{information.title}</h1>
         <div className="gap"></div>
         <div className="summary-con" dangerouslySetInnerHTML={{ __html: information.summary }}>
         </div>

@@ -46,12 +46,20 @@
         display: none;
     }
 
-    .instructions-frame {
-        display: none;
-    }
-
     .navigation-info {
         display: flex;
+    }
+
+    .summary-con {
+        text-align: justify;
+    }
+
+    .resimg-con {
+        width: 100%;
+    }
+
+    .search-info-image {
+        width: 100%;
     }
 }
 
@@ -104,6 +112,10 @@
     .navigation-info {
         display: none;
     }
+
+    .summary-con {
+        text-align: left;
+    }
 }
 
 @media (min-width: 768px) {
@@ -128,6 +140,25 @@
 
     .search-res {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .summary-con {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .ingredients-instructions {
+        max-width: 1000px;
+    }
+
+    .res-title {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .resimg-con {
+        max-width: 50%;
+        margin: auto;
     }
 }
 
