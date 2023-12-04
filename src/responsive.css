@@ -1,0 +1,145 @@
+@media (min-width: 280px) or (max-width: 280px) {
+    .search-con {
+        width: 95%;
+    }
+
+    .div-tag,
+    .fig-search {
+        font-size: 0.5rem;
+    }
+
+    .search-data-con {
+        font-size: 0.7rem;
+    }
+
+    .category-con,
+    .home-con,
+    .trend-con,
+    .search-con-res,
+    .search-data-con,
+    .search-info-image,
+    .ingredients-instructions {
+        width: 90%;
+    }
+
+    .trend-recipes,
+    .search-res {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fig {
+        height: 200px;
+    }
+
+    .home-fig {
+        width: 100%;
+        height: 45svh;
+    }
+
+    .ingredients-frame,
+    .instructions-frame {
+        width: 100%;
+    }
+
+    .ingredients-frame h3,
+    .instructions-frame h3 {
+        display: none;
+    }
+
+    .instructions-frame {
+        display: none;
+    }
+
+    .navigation-info {
+        display: flex;
+    }
+}
+
+@media (min-width: 375px) {
+
+    .div-tag,
+    .fig-search {
+        font-size: 0.7rem;
+    }
+
+    .fig {
+        height: 280px;
+    }
+}
+
+@media (min-width: 425px) {
+    .search-con {
+        max-width: 403px;
+    }
+}
+
+@media (min-width: 480px) {
+    .trend-recipes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ingredients-instructions {
+        display: flex;
+        gap: 1.2rem;
+    }
+
+    .ingredients-frame {
+        width: 30%;
+        display: block;
+    }
+
+    .instructions-frame {
+        width: 70%;
+        display: block;
+    }
+
+    .ingredients-frame h3 {
+        display: block;
+    }
+
+    .instructions-frame h3 {
+        display: block;
+    }
+
+    .navigation-info {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .div-tag,
+    .fig-search {
+        font-size: 1rem;
+    }
+
+    .category-con {
+        max-width: 746px;
+    }
+
+    .home-fig {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .trend-recipes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .search-res {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .home-con,
+    .trend-con,
+    .search-con-res {
+        max-width: 1000px;
+    }
+
+    .search-res {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,218 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.trend-con {
+  margin: auto;
+}
+
+.trend-recipes {
+  display: grid;
+  gap: 10px;
+}
+
+.fig {
+  width: 100%;
+  height: 280px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.fig-trend-con {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+figcaption.trend {
+  font-size: large;
+  color: white;
+}
+
+.gap {
+  width: 100%;
+  height: 15px;
+}
+
+.home-con {
+  margin: auto;
+}
+
+.home-fig {
+  text-align: center;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+figcaption.homee {
+  color: white;
+  font-size: large;
+}
+
+.search-con {
+  height: 3.5rem;
+  margin: auto;
+}
+
+.search-con-res {
+  margin: auto;
+}
+
+.search-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.inpt-search {
+  width: 80%;
+  height: 30px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.btn-search {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.btn-img {
+  width: 100%;
+  height: 100%;
+}
+
+.search-res {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin: auto;
+}
+
+.fig-search {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.fig-search-img {
+  width: 100%;
+  height: 80%;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.header-con {
+  margin: auto;
+}
+
+.headerr {
+  padding: 1rem;
+}
+
+.logo {
+  font-family: 'Dancing Script', cursive;
+  color: #202020;
+  text-decoration: none;
+}
+
+.search-data-con {
+  padding: 0.5rem;
+  margin: auto;
+}
+
+.summary-con {
+  color: gray;
+}
+
+.ingredients-con {
+  color: gray;
+  overflow: hidden;
+  max-height: 7rem;
+  transition: max-height 0.5s ease-in-out;
+  width: 100%;
+}
+
+.instructions-con {
+  color: gray;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.category-con {
+  margin: auto;
+}
+
+.div-tag {
+  list-style: none;
+  width: 100%;
+  background: linear-gradient(to right, #6d6875, #202020);
+  padding: 5px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+
+.div-tag.active {
+  background: linear-gradient(to right, rgb(255, 210, 96), rgb(255, 81, 0));
+}
+
+.resimg-con {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.navigation-info {
+  border-bottom: 1px solid whitesmoke;
+}
+
+.nav {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.nav.active {
+  background-color: whitesmoke;
+}
+
+.ingredients-instructions {
+  margin: auto;
+}
+
+.expand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: all 0.5s ease-in-out;
 }
