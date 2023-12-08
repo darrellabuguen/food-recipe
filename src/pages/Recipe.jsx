@@ -75,6 +75,7 @@ export default function Recipe(props) {
     }
 
     return <div className="search-data-con">
+        <div className="gap"></div>
         <div className="resimg-con">
             <img src={information.image} alt="img" className="search-info-image" />
         </div>
