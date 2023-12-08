@@ -27,6 +27,7 @@ function Home(props) {
         }
     }
     useEffect(() => {
+        setPage();
         window.addEventListener('resize', setPage);
 
         return () => {

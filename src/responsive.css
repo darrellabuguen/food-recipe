@@ -18,7 +18,8 @@
     .search-con-res,
     .search-data-con,
     .search-info-image,
-    .ingredients-instructions {
+    .ingredients-instructions,
+    .resimg-con {
         width: 90%;
     }
 
@@ -54,19 +55,24 @@
         text-align: justify;
     }
 
-    .resimg-con {
+    .search-info-image {
         width: 100%;
     }
 
-    .search-info-image {
-        width: 100%;
+    .res-title {
+        text-align: center;
+    }
+
+    .resimg-con {
+        margin: auto;
     }
 }
 
 @media (min-width: 375px) {
 
     .div-tag,
-    .fig-search {
+    .fig-search,
+    .summary-con {
         font-size: 0.7rem;
     }
 
@@ -113,8 +119,19 @@
         display: none;
     }
 
+    .res-title,
     .summary-con {
         text-align: left;
+    }
+
+    .resimg-con {
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .summary-con {
+        max-width: 1000px;
+        margin: auto;
     }
 }
 
@@ -123,6 +140,10 @@
     .div-tag,
     .fig-search {
         font-size: 1rem;
+    }
+
+    .summary-con {
+        font-size: 0.9rem;
     }
 
     .category-con {
@@ -142,13 +163,9 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .summary-con {
-        max-width: 1000px;
-        margin: auto;
-    }
-
     .ingredients-instructions {
         max-width: 1000px;
+        font-size: 0.8rem;
     }
 
     .res-title {
@@ -156,8 +173,12 @@
         margin: auto;
     }
 
+    .header-con {
+        max-width: 1100px;
+    }
+
     .resimg-con {
-        max-width: 50%;
+        max-width: 600px;
         margin: auto;
     }
 }
@@ -172,5 +193,10 @@
 
     .search-res {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .ingredients-instructions,
+    .summary-con {
+        font-size: 1rem;
     }
 }

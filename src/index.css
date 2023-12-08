@@ -18,6 +18,10 @@ code {
     monospace;
 }
 
+a {
+  color: #202020;
+}
+
 .trend-con {
   margin: auto;
 }

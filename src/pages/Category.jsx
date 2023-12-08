@@ -58,7 +58,8 @@ export default function Category(props) {
                 style={{
                     border: "none",
                     outline: "none",
-                    backgroundColor: "transparent"
+                    backgroundColor: "transparent",
+                    cursor: "pointer"
                 }}
                 onClick={() => {
                     handleOffset();

@@ -1,7 +1,7 @@
 import { useState } from "react";
-//import Home from "./Home";
+import Home from "./Home";
 import SearchResults from "./SearchResults";
-//import Trend from "./Trend";
+import Trend from "./Trend";
 import Header from "../components/Header";
 import Categories from "../components/Categories";
 import Category from "./Category";
@@ -17,7 +17,6 @@ function Pages() {
     var [ofset, setOfset] = useState(0);
     const getCategory = (childData) => {
         setChild(childData);
-        console.log(childData);
     }
     const queryHandle = (childQuery) => {
         setQuery(childQuery);
@@ -50,7 +49,7 @@ function Pages() {
         <Search searchQue={searchInptHandle} addOffset={offsetHandle} clicked={hidePages} />
         {/* <SearchResults que={queryHandle} hide={hideOther} searchQue={searchInptHandle} /> */}
         <Categories categories={categories} category={getCategory} clicked={hidePages} />
-        {/* {
+        {
             !query && !datafromchild && !searchInpt && (
                 <div>
                     <div className="gap"></div>
@@ -61,7 +60,7 @@ function Pages() {
                     <div className="gap"></div>
                 </div>
             )
-        } */}
+        }
         {
             datafromchild && !query && (
                 <Category category={datafromchild} que={queryHandle} />
