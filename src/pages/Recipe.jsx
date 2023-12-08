@@ -43,6 +43,7 @@ export default function Recipe(props) {
     }, [devwidth]);
 
     useEffect(() => {
+        setWidth(window.innerWidth);
         if (devwidth > 479) {
             document.querySelector(".ingredients-frame").style.display = "block";
             document.querySelector(".instructions-frame").style.display = "block";
