@@ -7,7 +7,7 @@ export default function Category(props) {
 
     useEffect(() => {
         getRecipe();
-    }, [category]);
+    });
 
     const handleOffset = () => {
         setOffset(ofset += 8);
