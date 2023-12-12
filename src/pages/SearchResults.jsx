@@ -26,7 +26,7 @@ function Search(props) {
 
     useEffect(() => {
         searchRecipe();
-    }, [query, ofset]);
+    });
 
     return <div className="search-con-res">
         <div className="gap"></div>

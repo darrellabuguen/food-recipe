@@ -9,7 +9,7 @@ export default function Recipe(props) {
     const [devwidth, setWidth] = useState(0);
     useEffect(() => {
         getInformation();
-    }, [query]);
+    });
 
     useEffect(() => {
         const expand = document.querySelector(".expand");
@@ -31,14 +31,14 @@ export default function Recipe(props) {
     }, [])
 
     useEffect(() => {
-        window.addEventListener('resize', () => {
+        const handleResize = () => {
             setWidth(window.innerWidth);
-        });
+        };
+
+        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.addEventListener('resize', () => {
-                setWidth(window.innerWidth);
-            });
+            window.addEventListener('resize', handleResize);
         }
     }, [devwidth]);
 
