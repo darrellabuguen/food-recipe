@@ -3,7 +3,7 @@ export default function Header() {
         <header className="headerr">
             <nav>
                 <div className="logo-frame">
-                    <h1><a href="/" className="logo">Tasty Bites</a></h1>
+                    <h1><a href="/" className="logo">Recipe Realm</a></h1>
                 </div>
             </nav>
         </header>
