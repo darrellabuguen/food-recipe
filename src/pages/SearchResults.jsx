@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 function Search(props) {
     const [searchResults, setResults] = useState([]);
@@ -6,7 +6,7 @@ function Search(props) {
     const query = props.query;
     var ofset = props.offset;
 
-    const searchRecipe = () => {
+    const searchRecipe = useCallback(() => {
         fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${query}&number=8&offset=${ofset}`)
             .then(response => {
                 if (!response.ok) {
@@ -22,11 +22,11 @@ function Search(props) {
             .catch(err => {
                 console.error(err);
             })
-    }
+    }, [query, ofset, props])
 
     useEffect(() => {
         searchRecipe();
-    });
+    }, [searchRecipe]);
 
     return <div className="search-con-res">
         <div className="gap"></div>

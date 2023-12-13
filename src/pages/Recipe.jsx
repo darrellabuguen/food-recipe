@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Recipe(props) {
     const query = props.query;
@@ -7,9 +7,6 @@ export default function Recipe(props) {
     const [navs, setNavInfo] = useState(0);
     const nav_info = ["Ingredients", "Instructions"];
     const [devwidth, setWidth] = useState(0);
-    useEffect(() => {
-        getInformation();
-    });
 
     useEffect(() => {
         const expand = document.querySelector(".expand");
@@ -54,12 +51,12 @@ export default function Recipe(props) {
         }
     }, [devwidth, navs])
 
-    const getInformation = async () => {
+    const getInformation = useCallback(async () => {
         const data = await fetch(`https://api.spoonacular.com/recipes/${JSON.stringify(query)}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=false`);
         const dataObj = await data.json();
         setInformation(dataObj);
         setExtended(dataObj.extendedIngredients);
-    }
+    }, [query])
 
     const setNav = () => {
         const ingredients_frame = document.querySelector(".ingredients-frame");
@@ -73,6 +70,10 @@ export default function Recipe(props) {
             ingredients_frame.style.display = "block";
         }
     }
+
+    useEffect(() => {
+        getInformation();
+    }, [getInformation]);
 
     return <div className="search-data-con">
         <div className="gap"></div>

@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function Category(props) {
     const category = props.category;
     const [recipes, setCategory] = useState([]);
     var [ofset, setOffset] = useState(0);
 
-    useEffect(() => {
-        getRecipe();
-    });
-
     const handleOffset = () => {
         setOffset(ofset += 8);
     }
 
-    const getRecipe = async () => {
+    const getRecipe = useCallback(async () => {
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${JSON.stringify(category)}&number=8&offset=${ofset}`);
         const dataObj = await data.json();
         setCategory(dataObj.results);
-    }
+    }, [category, ofset])
+
+    useEffect(() => {
+        getRecipe();
+    }, [getRecipe]);
 
     return <div className="trend-con">
         <div className="gap"></div>
